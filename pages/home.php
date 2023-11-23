@@ -8,3 +8,5 @@
     </button>
     <div style="display: none;" class="w-50" id="file-content"></div>
 </div>
+
+<script src="./scripts/get_text_file.js"></script>
