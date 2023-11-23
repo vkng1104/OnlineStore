@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const fileContent = document.getElementById("file-content");
   const toggleButton = document.getElementById("toggleButton");
+  const buttonInfo = document.getElementById("buttonInfo");
 
   // Function to toggle content visibility
   function toggleContent() {
     if (fileContent.style.display === "none") {
       fileContent.style.display = "block";
+      buttonInfo.textContent = "Click here to close";
     } else {
       fileContent.style.display = "none";
+      buttonInfo.textContent = "Click here to view more information about us";
     }
   }
 
