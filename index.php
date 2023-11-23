@@ -1,3 +1,11 @@
+<?php
+include('./includes/config_session.inc.php');
+include('./database/db_helper.php');
+connectToDatabase();
+createTables();
+// insertSampleProduct()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

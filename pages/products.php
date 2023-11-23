@@ -1,3 +1,32 @@
+<?php
+$pdo = connectToDatabase();
+
+try {
+    $stmt = $pdo->query("SELECT * FROM products");
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Error retrieving products: " . $e->getMessage());
+}
+?>
+
+<?php
+$pdo = connectToDatabase();
+
+// Check if a search query is provided
+$searchQuery = isset($_GET['search']) ? $_GET['search'] : '';
+
+try {
+    // Modify the SQL query to include the search condition
+    $stmt = $pdo->prepare("SELECT * FROM products WHERE productName LIKE :searchQuery");
+    $stmt->bindValue(':searchQuery', "%$searchQuery%", PDO::PARAM_STR);
+    $stmt->execute();
+
+    $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Error retrieving products: " . $e->getMessage());
+}
+?>
+
 <div class="content-container">
     <h1 class="font-weight-bold">Products</h1>
     <div class="search-container">
