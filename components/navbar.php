@@ -13,7 +13,7 @@
              <?php if (isset($_SESSION['user_id'])) { // Display Logout
                 ?>
                  <li class="nav-item">
-                     <a href="../logout.php" class="nav-link">Logout</a>
+                     <a href="./logout.php" class="nav-link">Logout</a>
                  </li>
          </ul>
      <?php } else { // Display Login and Register when not logged in 
