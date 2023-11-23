@@ -6,6 +6,7 @@
                 <input type="text" id="searchInput" name="search" placeholder="Search products...">
                 <button class="ms-3" type="button" onclick="searchProducts()">Search</button>
             </div>
+            <div id="searchResults" class="search-results"></div>
         </form>
     </div>
     <div id="products-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
@@ -16,4 +17,5 @@
     </div>
 </div>
 
-<script src="./scripts/search_products.js"></script>
+<script type="module" src="./scripts/search_dropdown.js"></script>
+<script type="module" src="./scripts/search_products.js"></script>
